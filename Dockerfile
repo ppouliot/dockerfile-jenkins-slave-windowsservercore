@@ -17,7 +17,7 @@ RUN \
     cmd.exe /c "c:\ProgramData\chocolatey\bin\wget.exe --no-check-certificate https://bootstrap.pypa.io/get-pip.py" ;\
     cmd.exe /c "c:\Python36\python.exe get-pip.py" ; \
     refreshenv ;\
-    cmd.exe /c "c:\Python36\Scripts\pip.exe install PyGithub pyyaml python-jenkins jenkins-job-builder jenkins-job-wrecker" ;
+    cmd.exe /c "c:\Python36\Scripts\pip.exe install PyGithub pyyaml python-jenkins jenkins-job-builder" ;
 COPY jenkins-slave.cmd /jenkins-slave.cmd
 VOLUME C:\\jenkins-slave
 ENTRYPOINT [ "cmd", "/C", "C:\\jenkins-slave.cmd" ]
